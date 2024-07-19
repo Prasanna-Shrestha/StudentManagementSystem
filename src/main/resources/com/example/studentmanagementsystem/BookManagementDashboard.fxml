@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="contentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentmanagementsystem.BookManagementDashboard">
+   <children>
+      <HBox prefHeight="65.0" prefWidth="800.0" style="-fx-background-color: #5c6ca5;">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../../../images/graduationcap.png" />
+               </image>
+            </ImageView>
+            <Label text="Librarian Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" top="8.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/profile-user_64572.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="340.0" top="12.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button mnemonicParsing="false" style="-fx-padding: 8; -fx-background-color: red; -fx-text-fill: black; -fx-background-radius: 15;" text="Logout">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="700.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="650.0" prefWidth="230.0" style="-fx-background-color: #5c6ca5;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: black;">
+                     <children>
+                        <Button fx:id="overviewBtn" alignment="CENTER" onAction="#overviewAction" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: black;" text="Overview" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: black;">
+                     <children>
+                        <Button fx:id="bookMngmtBtn" alignment="CENTER" onAction="#bookMngmtAction" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: black;" text="Book Management" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: black;">
+                     <children>
+                        <Button fx:id="libraryRecordsBtn" alignment="CENTER" onAction="#libraryReviewAction" prefHeight="34.0" prefWidth="163.0" style="-fx-background-color: black;" text="Library Records" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="446.0" prefWidth="607.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="177.0" text="Book Management">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox prefHeight="452.0" prefWidth="549.0" style="-fx-background-color: #d3d3d3;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="459.0" prefWidth="533.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="222.0" prefWidth="534.0" style="-fx-background-color: #d3d3d3;">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Add New Book">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="20.0" prefHeight="18.0" prefWidth="62.0" text="Book Title:">
+                                       <VBox.margin>
+                                          <Insets left="15.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="bookTitle" promptText="Book Title">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label layoutX="25.0" layoutY="45.0" prefHeight="18.0" prefWidth="62.0" text="Author:">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="author" layoutX="25.0" layoutY="64.0" promptText="Author">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label layoutX="10.0" layoutY="89.0" prefHeight="18.0" prefWidth="62.0" text="ISBN:">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="isbn" layoutX="10.0" layoutY="108.0">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label prefHeight="18.0" text="Book Added:">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <DatePicker fx:id="bookAddedDate">
+                                       <VBox.margin>
+                                          <Insets left="15.0" />
+                                       </VBox.margin>
+                                    </DatePicker>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="518.0">
+                                       <children>
+                                          <Button fx:id="addBook" mnemonicParsing="false" onAction="#addBookAction" style="-fx-background-color: #08962e; -fx-text-fill: white;" text="Add Book">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="bookAddedPrompt" prefHeight="18.0" prefWidth="175.0" visible="false">
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin></Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="15.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="bookTable" prefWidth="514.0">
+                                 <columns>
+                                    <TableColumn fx:id="bookTitleColumn" prefWidth="95.19993436336517" text="Book Title" />
+                                    <TableColumn fx:id="authorColumn" prefWidth="94.40003204345703" text="Author" />
+                                    <TableColumn fx:id="isbnColumn" prefWidth="109.79998779296875" text="ISBN" />
+                                    <TableColumn fx:id="dateColumn" prefWidth="108.0" text="Book Added Date" />
+                                    <TableColumn fx:id="actionColumn" prefWidth="107.19998168945312" text="Action" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
